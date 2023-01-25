@@ -3,11 +3,9 @@
   "features": {
     "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
     "ghcr.io/guiyomh/features/vim:0": {}
-    },
+  },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": [
-    "conda install pytorch torchvision torchaudio pytorch-lightning -c pytorch -c conda-forge"
-    ],
+  "updateContentCommand": "python3 -m pip install --upgrade pip && pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && python -m pip install lightning",
   "customizations": {
     "codespaces": {
       "openFiles": []
@@ -17,5 +15,6 @@
         "ms-toolsai.jupyter",
         "ms-python.python"
       ]
+    }
   }
 }
